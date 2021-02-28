@@ -17,3 +17,49 @@ const formula = x => addFour(multiplyThree(multiplyTwo(x)));
     },
     function (k) { return k; }
 )
+
+// function compose() {
+//     const funcArr = Array.prototype.slice.call(arguments);
+//     console.dir(funcArr);
+//     return funcArr.reduce(
+//         function (prevFunc, nextFunc) {
+//             return function (value) {
+//                 const args = Array.prototype.slice.call(arguments);
+//                 return nextFunc(prevFunc.apply(null, atgs));
+//             }
+//         },
+//         function (k) { return k; }
+//     );
+// }
+
+function compose(...funcArr) {
+    return funcArr.reduce(
+        function (prevFunc, nextFunc) {
+            return function (...args) {
+                return nextFunc(prevFunc(...args));
+            }
+        },
+        function (k) { return k; }
+    );
+}
+
+function test() {
+    const temp = Array.prototype.slice.call(arguments);
+    console.dir(temp);
+}
+
+// 
+// const formulaWithCompose = compose(multiplyTwo);
+// const formulaWithCompose2 = compose(multiplyTwo, multiplyThree);
+const formulaWithCompose3 = compose(multiplyTwo, multiplyThree, addFour); 
+
+// console.log(formulaWithCompose(10));
+// console.log(formulaWithCompose2(10));
+// console.log(formulaWithCompose3(10));
+
+// console.log(test(1,2,3));
+
+const formulaWithCompose4 = compose(multiplyTwo, multiplyThree, addFour);
+const x = 10;
+
+console.log(formulaWithCompose4(10));
