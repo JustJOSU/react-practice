@@ -32,16 +32,16 @@ class Input extends PureComponent {
         <div className="input-field">
             <input 
                 id={`input_${name}`}
-                className="validate"
+                className={`validate ${errorMessage && 'invalid'}`}
                 ref={this.setRef}
                 type={type}
                 onChange={this.handleChange}
                 value={value}
             />
-            <label htmlFor={`input_${name}`}>
+            <label className="active" for={`input_${name}`}>
                 {label}
             </label>
-            {errorMessage && <span className="helper-text">{errorMessage}</span>}
+            {errorMessage && <span className="helper-text" data-error={errorMessage}>{errorMessage}</span>}
         </div>
     );
   }
