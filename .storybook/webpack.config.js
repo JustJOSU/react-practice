@@ -5,9 +5,9 @@ module.exports = {
         rules: [
             {
                 test: /\.scss$/,
-                use: ["sass-loader"],
-                include: path.resolve(__dirname, "../src/sass")
+                loaders: ["sass-loader"],
+                include: path.resolve(__dirname, '../')
             }
         ]
     }
-}
+};
