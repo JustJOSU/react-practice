@@ -37,7 +37,7 @@ class HomePageComponent extends PureComponent {
     getChildContext(){ 
         return {
             loading: this.state.loading,
-            setLoading: this.state.setLoading,
+            setLoading: this.setLoading,
         };
     }
 

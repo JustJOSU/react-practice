@@ -13,7 +13,7 @@ class LoadingProvider extends React.Component {
     getChildContext(){ 
         return {
             loading: this.state.loading,
-            setLoading: this.state.setLoading,
+            setLoading: this.setLoading,
         };
     }
 
