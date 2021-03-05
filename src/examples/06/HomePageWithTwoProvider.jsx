@@ -3,7 +3,7 @@ import {
     ButtonWithDefaultLoadingContext, 
     ButtonWithLoading2Context
 } from './ButtonWithLoadingContextAndKey';
-import LoadingProviderWithKey, { DEFAULT_KEY } from './LoadingProviderWithKey';
+import LoadingProviderWithKey from './LoadingProviderWithKey';
 
 const LoadingProvider1 = LoadingProviderWithKey();
 const LoadingProvider2 = LoadingProviderWithKey('loading2');
@@ -17,7 +17,7 @@ function TableComponent() {
     );
 }
 
-export default class HomePageComponentWithTwoProvider extends PureComponent {
+class HomePageComponentWithTwoProvider extends PureComponent {
     render() {
         return (
             <LoadingProvider1>
@@ -25,6 +25,8 @@ export default class HomePageComponentWithTwoProvider extends PureComponent {
                     <TableComponent />
                 </LoadingProvider2>
             </LoadingProvider1>
-        )
+        );
     }
 }
+
+export default HomePageComponentWithTwoProvider;

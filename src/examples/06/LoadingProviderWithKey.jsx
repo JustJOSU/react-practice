@@ -34,7 +34,7 @@ export default (contextKey = DEFAULT_KEY) => {
         }
     }
 
-    LoadingProvider.childrenContextTypes = {
+    LoadingProvider.childContextTypes = {
         [contextKey]: contextPropTypes,
     };
 
