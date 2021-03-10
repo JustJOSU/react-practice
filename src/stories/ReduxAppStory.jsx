@@ -12,6 +12,7 @@ import AdvReduxApp05 from '../examples/07/AdvReduxApp05';
 import AdvReduxApp06 from '../examples/07/AdvReduxApp06';
 import AdvReduxApp07 from '../examples/07/AdvReduxApp07';
 import AdvReduxApp08 from '../examples/07/AdvReduxApp08';
+import SearchFilterReduxApp from '../examples/07/SearchFilterReduxApp';
 
 storiesOf('ReduxApp', module)
     .addWithJSX('기본 스토어 설정', () => (
@@ -46,4 +47,7 @@ storiesOf('ReduxApp', module)
     ))
     .addWithJSX('최종 액션 확인', () => (
         <AdvReduxApp08 />
+    ))
+    .addWithJSX('SearchFilter 예제', () => (
+        <SearchFilterReduxApp />
     ))
