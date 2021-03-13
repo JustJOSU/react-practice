@@ -10,7 +10,7 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToProps = {
-    onChnage: setFilter,
+    onChange: setFilter,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Input);
