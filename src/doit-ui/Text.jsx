@@ -31,7 +31,6 @@ class Text extends PureComponent {
                     bold && styles.bold,
                     light && styles.light,
                     inverse && styles.inverse,
-
                 )}
             >
                 {children}
@@ -50,7 +49,7 @@ Text.propTypes = {
     xlarge: PropTypes.bool,
     primary: PropTypes.bool,
     secondary: PropTypes.bool,
-    inverse: PropTypes.inverse,
+    inverse: PropTypes.bool,
 };
 
 export default withStyles(({
